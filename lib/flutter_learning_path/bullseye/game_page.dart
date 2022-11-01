@@ -33,7 +33,9 @@ class _GamePageState extends State<GamePage> {
             Prompt(targetValue: _model.target),
             Control(model: _model),
             TextButton(
-              onPressed: showAlert,
+              onPressed: () {
+                showAlert();
+              },
               child: const Text("Hit me"),
             ),
             Score(
@@ -66,6 +68,10 @@ class _GamePageState extends State<GamePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
+                setState(() {
+                  _model.totalScore += _pointsForCurrentRound();
+                  _model.target = Random().nextInt(100) + 1;
+                });
               },
               child: const Text("Awesome"),
             )
