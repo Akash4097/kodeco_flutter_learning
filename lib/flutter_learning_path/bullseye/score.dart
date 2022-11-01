@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class Score extends StatelessWidget {
   final int totalScore;
   final int round;
-
+  final VoidCallback onStartOver;
   const Score({
     super.key,
     required this.totalScore,
     required this.round,
+    required this.onStartOver,
   });
 
   @override
@@ -16,7 +17,9 @@ class Score extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            onStartOver();
+          },
           child: const Text("Start Over"),
         ),
         Padding(
