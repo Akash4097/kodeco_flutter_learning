@@ -1,5 +1,6 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/bullseye/game_model.dart';
+import 'game_model.dart';
 import 'score.dart';
 import 'control.dart';
 import 'prompt.dart';
@@ -17,7 +18,7 @@ class _GamePageState extends State<GamePage> {
   @override
   void initState() {
     super.initState();
-    _model = GameModel(50);
+    _model = GameModel(Random().nextInt(100) + 1);
   }
 
   @override
@@ -27,7 +28,7 @@ class _GamePageState extends State<GamePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Prompt(targetValue: 100),
+            Prompt(targetValue: _model.target),
             Control(model: _model),
             TextButton(
               onPressed: () {},
