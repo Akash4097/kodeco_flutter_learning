@@ -34,7 +34,7 @@ class _GamePageState extends State<GamePage> {
             Control(model: _model),
             TextButton(
               onPressed: () {
-                showAlert();
+                _showAlert();
               },
               child: const Text("Hit me"),
             ),
@@ -52,11 +52,18 @@ class _GamePageState extends State<GamePage> {
 
   int _pointsForCurrentRound() {
     const int maximumScore = 100;
+    int bonus = 0;
     final difference = _differenceAmount;
-    return maximumScore - difference;
+
+    if (difference == 0) {
+      bonus = 100;
+    } else if (difference == 1) {
+      bonus = 50;
+    }
+    return maximumScore - difference + bonus;
   }
 
-  String alertTitle() {
+  String _getAlertTitle() {
     final difference = _differenceAmount;
     String title;
 
@@ -72,12 +79,12 @@ class _GamePageState extends State<GamePage> {
     return title;
   }
 
-  void showAlert() {
+  void _showAlert() {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(alertTitle()),
+          title: Text(_getAlertTitle()),
           content: Text(
             "The Slider's value is ${_model.current}\n"
             "You scored ${_pointsForCurrentRound()} points this round",
