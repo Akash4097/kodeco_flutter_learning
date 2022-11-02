@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'styled_button.dart';
 import 'text_style.dart';
 
 class Score extends StatelessWidget {
@@ -17,11 +18,11 @@ class Score extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        TextButton(
+        StyledButton(
           onPressed: () {
             onStartOver();
           },
-          child: const Text("Start Over"),
+          icon: Icons.refresh,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
@@ -53,9 +54,9 @@ class Score extends StatelessWidget {
             ],
           ),
         ),
-        TextButton(
+        StyledButton(
           onPressed: () {},
-          child: const Text("Info"),
+          icon: Icons.info,
         )
       ],
     );
