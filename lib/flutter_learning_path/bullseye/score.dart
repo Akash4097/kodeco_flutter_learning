@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'text_style.dart';
 
 class Score extends StatelessWidget {
   final int totalScore;
@@ -23,20 +24,32 @@ class Score extends StatelessWidget {
           child: const Text("Start Over"),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: Column(
             children: [
-              const Text("Score: "),
-              Text("$totalScore"),
+              Text(
+                "Score: ",
+                style: LabelTextStyle.bodyText1(context),
+              ),
+              Text(
+                "$totalScore",
+                style: ScoreNumberTextStyle.headline4(context),
+              ),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: Column(
             children: [
-              const Text("Round: "),
-              Text("$round"),
+              Text(
+                "Round: ",
+                style: LabelTextStyle.bodyText1(context),
+              ),
+              Text(
+                "$round",
+                style: ScoreNumberTextStyle.headline4(context),
+              ),
             ],
           ),
         ),

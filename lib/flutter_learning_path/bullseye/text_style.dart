@@ -10,3 +10,23 @@ class LabelTextStyle {
         );
   }
 }
+
+class ScoreNumberTextStyle {
+  static TextStyle? headline4(BuildContext context) {
+    return Theme.of(context).textTheme.headline4?.copyWith(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        );
+  }
+}
+
+class TargetTextStyle {
+  static TextStyle? bodyText1(BuildContext context) {
+    return Theme.of(context).textTheme.bodyText1?.copyWith(
+          fontSize: 32.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        );
+  }
+}
