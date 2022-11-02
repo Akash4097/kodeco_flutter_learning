@@ -2,8 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'control.dart';
 import 'game_model.dart';
+import 'hitme_button.dart';
 import 'prompt.dart';
 import 'score.dart';
+import 'styled_button.dart';
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
@@ -38,11 +40,11 @@ class _GamePageState extends State<GamePage> {
             children: [
               Prompt(targetValue: _model.target),
               Control(model: _model),
-              TextButton(
+              HitMeButton(
                 onPressed: () {
                   _showAlert();
                 },
-                child: const Text("Hit me"),
+                text: "Hit me",
               ),
               Score(
                 totalScore: _model.totalScore,
@@ -109,7 +111,7 @@ class _GamePageState extends State<GamePage> {
             "You scored ${_pointsForCurrentRound()} points this round",
           ),
           actions: [
-            TextButton(
+            StyledButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 setState(() {
@@ -118,7 +120,7 @@ class _GamePageState extends State<GamePage> {
                   _model.round++;
                 });
               },
-              child: const Text("Awesome"),
+              icon: Icons.close,
             )
           ],
         );
