@@ -11,6 +11,7 @@ class BullsEyeApp extends StatelessWidget {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     return const GamePage();
   }
 }

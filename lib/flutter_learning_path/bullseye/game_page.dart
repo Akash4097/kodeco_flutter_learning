@@ -1,7 +1,5 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-
 import 'control.dart';
 import 'game_model.dart';
 import 'prompt.dart';
@@ -25,25 +23,34 @@ class _GamePageState extends State<GamePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Prompt(targetValue: _model.target),
-            Control(model: _model),
-            TextButton(
-              onPressed: () {
-                _showAlert();
-              },
-              child: const Text("Hit me"),
-            ),
-            Score(
-              totalScore: _model.totalScore,
-              round: _model.round,
-              onStartOver: _startNewGame,
-            ),
-          ],
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(
+          image: AssetImage("assets/images/background.png"),
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Prompt(targetValue: _model.target),
+              Control(model: _model),
+              TextButton(
+                onPressed: () {
+                  _showAlert();
+                },
+                child: const Text("Hit me"),
+              ),
+              Score(
+                totalScore: _model.totalScore,
+                round: _model.round,
+                onStartOver: _startNewGame,
+              ),
+            ],
+          ),
         ),
       ),
     );
