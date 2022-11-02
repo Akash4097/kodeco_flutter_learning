@@ -24,34 +24,38 @@ class Score extends StatelessWidget {
           },
           icon: Icons.refresh,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Column(
-            children: [
-              Text(
-                "Score: ",
-                style: LabelTextStyle.bodyText1(context),
-              ),
-              Text(
-                "$totalScore",
-                style: ScoreNumberTextStyle.headline4(context),
-              ),
-            ],
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: Column(
+              children: [
+                Text(
+                  "Score: ",
+                  style: LabelTextStyle.bodyText1(context),
+                ),
+                Text(
+                  "$totalScore",
+                  style: ScoreNumberTextStyle.headline4(context),
+                ),
+              ],
+            ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Column(
-            children: [
-              Text(
-                "Round: ",
-                style: LabelTextStyle.bodyText1(context),
-              ),
-              Text(
-                "$round",
-                style: ScoreNumberTextStyle.headline4(context),
-              ),
-            ],
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: Column(
+              children: [
+                Text(
+                  "Round: ",
+                  style: LabelTextStyle.bodyText1(context),
+                ),
+                Text(
+                  "$round",
+                  style: ScoreNumberTextStyle.headline4(context),
+                ),
+              ],
+            ),
           ),
         ),
         StyledButton(
