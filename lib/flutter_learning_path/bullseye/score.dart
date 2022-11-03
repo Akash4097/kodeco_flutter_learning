@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/bullseye/about.dart';
+import 'about.dart';
 import 'styled_button.dart';
 import 'text_style.dart';
 
