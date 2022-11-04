@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'flutter_learning_path/bullseye/bullseye_app.dart';
+import 'flutter_learning_path/kodeco_app/strings.dart';
+import 'flutter_learning_path/kodeco_app/kodeco_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: Strings.appTitle,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
-      home: const BullsEyeApp(),
+      home: const KodecoApp(),
     );
   }
 }
