@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../repository/course_repository.dart';
 import '../../constants.dart';
 import '../../model/course.dart';
 import 'course_controller.dart';
@@ -11,7 +12,7 @@ class CoursePage extends StatefulWidget {
 }
 
 class _CoursePageState extends State<CoursePage> {
-  final _controller = CourseController();
+  final _controller = CourseController(CourseRepository());
 
   @override
   Widget build(BuildContext context) {
