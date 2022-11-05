@@ -9,15 +9,15 @@ class Constants {
   static const String flutterDomain = '9';
 
 // Values stored in preferences
-  static const String otherFilter = '-1';
-  static const String allFilter = '0';
-  static const String iosFilter = '1';
-  static const String androidFilter = '2';
-  static const String unityFilter = '3';
-  static const String macosFilter = '5';
-  static const String archivedFilter = '6';
-  static const String sssFilter = '8';
-  static const String flutterFilter = '9';
+  static const int otherFilter = -1;
+  static const int allFilter = 0;
+  static const int iosFilter = 1;
+  static const int androidFilter = 2;
+  static const int unityFilter = 3;
+  static const int macosFilter = 5;
+  static const int archivedFilter = 6;
+  static const int sssFilter = 8;
+  static const int flutterFilter = 9;
 
   static const String filterKey = 'FILTER_KEY';
 }
