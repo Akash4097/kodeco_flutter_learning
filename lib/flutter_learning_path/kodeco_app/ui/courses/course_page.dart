@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/ui/course_details/course_detail_page.dart';
 import '../../repository/course_repository.dart';
 import '../../constants.dart';
 import '../../model/course.dart';
@@ -58,6 +59,13 @@ class _CoursePageState extends State<CoursePage> {
           child: Image.network(course.artworkUrl),
         ),
         subtitle: Text(course.domainString),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => CourseDetailPage(course: course),
+            ),
+          );
+        },
       ),
     );
   }
