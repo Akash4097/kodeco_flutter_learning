@@ -60,6 +60,14 @@ class Course {
     }
   }
 
+  String get domainString {
+    String res = "";
+    for (var element in domains) {
+      res += "${element.name}, ";
+    }
+    return res;
+  }
+
   @override
   String toString() =>
       'Course(id: $id, name: $name, description: $description, difficulty: $difficulty, contributor: $contributor, artworkUrl: $artworkUrl, domains: $domains)';

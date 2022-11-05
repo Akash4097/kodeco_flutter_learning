@@ -28,10 +28,36 @@ class _CoursePageState extends State<CoursePage> {
             );
           }
 
-          return Center(
-            child: Text(course.toString()),
+          return ListView.builder(
+            padding: const EdgeInsets.all(16.0),
+            itemCount: course.length,
+            itemBuilder: (context, index) {
+              return _buildRow(
+                course[index],
+              );
+            },
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildRow(Course course) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        title: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Text(
+            course.name,
+            style: const TextStyle(fontSize: 18.0),
+          ),
+        ),
+        trailing: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.network(course.artworkUrl),
+        ),
+        subtitle: Text(course.domainString),
       ),
     );
   }
