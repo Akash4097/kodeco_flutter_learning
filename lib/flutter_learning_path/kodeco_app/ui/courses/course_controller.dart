@@ -1,8 +1,8 @@
-import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/model/course.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/repository/course_repository.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/repository/repository.dart';
+import '../../model/course.dart';
+import '../../repository/course_repository.dart';
+import '../../repository/repository.dart';
 
-class ClassController {
+class CourseController {
   final Repository repository = CourseRepository();
 
   Future<List<Course>> fetchCourses(int domainFilter) =>
