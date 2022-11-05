@@ -27,8 +27,8 @@ class _CoursePageState extends State<CoursePage> {
             );
           }
 
-          return const Center(
-            child: Text("Kodeco App Courses Fetched Successfully!"),
+          return Center(
+            child: Text(course.toString()),
           );
         },
       ),
