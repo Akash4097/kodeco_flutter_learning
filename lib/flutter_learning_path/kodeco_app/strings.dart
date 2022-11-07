@@ -1,6 +1,6 @@
 class Strings {
   static String appTitle = "Kodeco App";
-  static String filter = "filer";
+  static String filter = "filter";
   static String ios = "iOS";
   static String android = "Android";
   static String flutter = "Flutter";
