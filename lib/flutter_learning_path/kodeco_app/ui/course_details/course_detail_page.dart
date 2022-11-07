@@ -55,30 +55,28 @@ class CourseDetailPage extends StatelessWidget {
   }
 
   Widget _buildDetails(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              "Domains: ${course.domainString}",
-              style: const TextStyle(fontSize: 16.0),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            "Domains: ${course.domainString}",
+            style: const TextStyle(fontSize: 16.0),
+          ),
+          Text(
+            "Level: ${course.difficulty?.capitalize()}",
+            style: const TextStyle(fontSize: 16.0),
+          ),
+          Text(
+            "${course.contributor}",
+            style: const TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
             ),
-            Text(
-              "Level: ${course.difficulty?.capitalize()}",
-              style: const TextStyle(fontSize: 16.0),
-            ),
-            Text(
-              "${course.contributor}",
-              style: const TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
