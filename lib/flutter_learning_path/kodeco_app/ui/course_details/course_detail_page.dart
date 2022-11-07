@@ -16,8 +16,7 @@ class CourseDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(course.name),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+      body: ListView(
         children: [
           _buildBanner(),
           _buildMain(context),
@@ -27,9 +26,12 @@ class CourseDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _buildBanner() => ImageContainer(
-        height: 300,
-        url: course.artworkUrl,
+  Widget _buildBanner() => Hero(
+        tag: "cardArtwork-${course.id}",
+        child: ImageContainer(
+          height: 300,
+          url: course.artworkUrl,
+        ),
       );
 
   Widget _buildMain(BuildContext context) {
@@ -53,28 +55,30 @@ class CourseDetailPage extends StatelessWidget {
   }
 
   Widget _buildDetails(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            "Domains: ${course.domainString}",
-            style: const TextStyle(fontSize: 16.0),
-          ),
-          Text(
-            "Level: ${course.difficulty?.capitalize()}",
-            style: const TextStyle(fontSize: 16.0),
-          ),
-          Text(
-            "${course.contributor}",
-            style: const TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              "Domains: ${course.domainString}",
+              style: const TextStyle(fontSize: 16.0),
             ),
-          )
-        ],
+            Text(
+              "Level: ${course.difficulty?.capitalize()}",
+              style: const TextStyle(fontSize: 16.0),
+            ),
+            Text(
+              "${course.contributor}",
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
