@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'image_container.dart';
 import '../../model/course.dart';
 import '../../utils/string_extension.dart';
@@ -21,6 +22,13 @@ class CourseDetailPage extends StatelessWidget {
           _buildBanner(),
           _buildMain(context),
           _buildDetails(context),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(
+              onPressed: () => _launchCourse(course.id),
+              child: const Text("View Course"),
+            ),
+          )
         ],
       ),
     );
@@ -79,5 +87,9 @@ class CourseDetailPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _launchCourse(String courseId) {
+    launchUrl(Uri.parse("https://raywenderlich.com/$courseId"));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'ui/filter/filter_page.dart';
 import 'strings.dart';
 import 'ui/courses/course_page.dart';
@@ -8,6 +9,8 @@ class KodecoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(Strings.appTitle),
