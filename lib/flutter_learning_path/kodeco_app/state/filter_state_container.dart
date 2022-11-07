@@ -27,7 +27,7 @@ class FilterState extends State<FilterStateContainer> {
     SharedPreferences.getInstance().then((value) {
       _prefs = value;
       setState(() {
-        filterValue = _prefs.getInt(Constants.filterKey) as int;
+        filterValue = _prefs.getInt(Constants.filterKey) ?? 0;
       });
     });
   }
