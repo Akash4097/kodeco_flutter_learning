@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/ui/course_details/course_detail_page.dart';
+import '../../state/filter_state_container.dart';
+import '../course_details/course_detail_page.dart';
 import '../../repository/course_repository.dart';
-import '../../constants.dart';
 import '../../model/course.dart';
 import 'course_controller.dart';
 
@@ -14,16 +14,24 @@ class CoursePage extends StatefulWidget {
 
 class _CoursePageState extends State<CoursePage> {
   final _controller = CourseController(CourseRepository());
+  late FilterState state;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    state = FilterStateContainer.of(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<List<Course>>(
-        future: _controller.fetchCourses(Constants.allFilter),
+        future: _controller.fetchCourses(state.filterValue),
         builder: (context, snapshot) {
           final course = snapshot.data;
 
-          if (course == null) {
+          if (course == null ||
+              (snapshot.connectionState != ConnectionState.done)) {
             return const Center(
               child: CircularProgressIndicator(),
             );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kodeco_flutter_learning/flutter_learning_path/kodeco_app/ui/filter/filter_page.dart';
+import 'ui/filter/filter_page.dart';
 import 'strings.dart';
 import 'ui/courses/course_page.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'flutter_learning_path/kodeco_app/state/filter_state_container.dart';
 import 'flutter_learning_path/kodeco_app/strings.dart';
 import 'flutter_learning_path/kodeco_app/kodeco_app.dart';
 
@@ -11,13 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: Strings.appTitle,
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+    return FilterStateContainer(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: Strings.appTitle,
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: const KodecoApp(),
       ),
-      home: const KodecoApp(),
     );
   }
 }
