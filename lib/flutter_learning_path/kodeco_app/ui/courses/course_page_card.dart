@@ -40,14 +40,16 @@ class CoursePageCard extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.0),
-                      color: Colors.black.withAlpha(80),
+                      color: Colors.deepOrange[400],
                     ),
-                    child: Text(
-                      course.name,
-                      style: const TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Expanded(
+                      child: Text(
+                        course.name,
+                        style: const TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -58,34 +60,5 @@ class CoursePageCard extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
-
-
-
-// ListTile(
-//         title: Padding(
-//           padding: const EdgeInsets.only(bottom: 8.0),
-//           child: Text(
-//             course.name,
-//             style: const TextStyle(fontSize: 18.0),
-//           ),
-//         ),
-//         trailing: Hero(
-//           tag: "cardArtwork-${course.id}",
-//           transitionOnUserGestures: true,
-//           child: ClipRRect(
-//             borderRadius: BorderRadius.circular(8.0),
-//             child: Image.network(course.artworkUrl),
-//           ),
-//         ),
-//         subtitle: Text(course.domainString),
-//         onTap: () {
-//           Navigator.of(context).push(
-//             MaterialPageRoute(
-//               builder: (_) => CourseDetailPage(course: course),
-//             ),
-//           );
-//         },
-//       )
