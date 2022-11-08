@@ -23,10 +23,21 @@ class CourseDetailPage extends StatelessWidget {
           _buildMain(context),
           _buildDetails(context),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
+            padding:
+                const EdgeInsets.only(bottom: 32.0, left: 24.0, right: 24.0),
+            child: OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                fixedSize: const Size(double.infinity, 52.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
+                side: const BorderSide(color: Colors.deepOrange),
+              ),
               onPressed: () => _launchCourse(course.id),
-              child: const Text("View Course"),
+              child: const Text(
+                "View Course",
+                style: TextStyle(fontSize: 18.0),
+              ),
             ),
           )
         ],

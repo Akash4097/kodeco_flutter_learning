@@ -42,14 +42,12 @@ class CoursePageCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.0),
                       color: Colors.deepOrange[400],
                     ),
-                    child: Expanded(
-                      child: Text(
-                        course.name,
-                        style: const TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                    child: Text(
+                      course.name,
+                      style: const TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
